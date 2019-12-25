@@ -1,3 +1,20 @@
+(* The type of ternary trees. *)
+type 'a tree =
+  | Empty
+  | Node of 'a * 'a tree * 'a tree * 'a tree
+;;
+
+(* An example ternary tree. *)
+let t = Node (
+    1,
+    Node (2, Empty, Empty, Empty),
+    Node (3, Empty, Empty, Empty),
+    Node (4, Empty, Empty, Empty)
+  );;
+
+let identity = fun x -> x ;;
+let add1 = fun x -> x + 1 ;;
+
 (* map_tree applies a function f, which is taken as input, to each node in the tree *)
 let map_tree_tests: (((int -> int) * int tree) * int tree) list = [
   ((identity, t), t);
