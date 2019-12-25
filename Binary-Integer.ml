@@ -1,5 +1,10 @@
-(* intToBin: converts an integer to a binary number, which is written in reverse. Example: 6 = 110 = Zero(One(One E)) *)
+type bnum =
+  | E
+  | Zero of bnum
+  | One of bnum
+;; 
 
+(* intToBin: converts an integer to a binary number, which is written in reverse. Example: 6 = 110 = Zero(One(One E)) *)
 let intToBin_tests = [
   (0, E);
   (1, One E);
