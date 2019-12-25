@@ -1,3 +1,11 @@
+type prop =
+  | Atom of string
+  | Neg of prop
+  | Conj of prop * prop
+  | Disj of prop * prop
+  | Impl of prop * prop
+;;
+
 let nnf_tests = [
   ( Atom "q" , Atom "q" );
   ( Neg(Neg(Atom "p")) , Atom "p" );
